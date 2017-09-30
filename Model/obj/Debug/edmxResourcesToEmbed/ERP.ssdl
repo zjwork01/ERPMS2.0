@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ERPMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="c_id" />
+    </Key>
+    <Property Name="c_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="c_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="c_company" Type="nvarchar" MaxLength="200" />
+    <Property Name="c_tel" Type="varchar" MaxLength="20" />
+    <Property Name="c_type" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="instorage">
+    <Key>
+      <PropertyRef Name="i_id" />
+    </Key>
+    <Property Name="i_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_material" Type="int" />
+    <Property Name="i_num" Type="int" />
+    <Property Name="i_volume" Type="float" />
+    <Property Name="i_weight" Type="float" />
+    <Property Name="i_staff" Type="int" />
+    <Property Name="i_warehouse" Type="int" />
+  </EntityType>
+  <EntityType Name="material">
+    <Key>
+      <PropertyRef Name="m_id" />
+    </Key>
+    <Property Name="m_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="m_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="m_unit" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="m_price" Type="float" Nullable="false" />
+    <Property Name="m_num" Type="int" Nullable="false" />
+    <Property Name="m_warehouse" Type="int" />
+    <Property Name="m_provider" Type="int" />
+    <Property Name="m_note" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="outstorage">
+    <Key>
+      <PropertyRef Name="o_id" />
+    </Key>
+    <Property Name="o_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="o_material" Type="int" />
+    <Property Name="o_num" Type="int" />
+    <Property Name="o_volume" Type="float" />
+    <Property Name="o_weight" Type="float" />
+    <Property Name="o_staff" Type="int" />
+    <Property Name="o_warehouse" Type="int" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="p_name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="p_unit" Type="nvarchar" MaxLength="20" />
+    <Property Name="p_num" Type="int" />
+    <Property Name="p_warehouse" Type="int" />
+    <Property Name="p_note" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="provider">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="p_company" Type="nvarchar" MaxLength="200" />
+    <Property Name="p_manager" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="p_tel" Type="varchar" MaxLength="20" />
+    <Property Name="p_cardname" Type="nvarchar" MaxLength="20" />
+    <Property Name="p_card" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pur_indent">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="p_staff" Type="int" />
+    <Property Name="p_indentdate" Type="datetime" />
+    <Property Name="p_pickdate" Type="datetime" />
+    <Property Name="p_material" Type="int" />
+    <Property Name="p_num" Type="int" />
+    <Property Name="p_indentstate" Type="int" />
+    <Property Name="p_logistics" Type="nvarchar" MaxLength="20" />
+    <Property Name="p_logisticeid" Type="int" />
+    <Property Name="p_note" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="pur_MRB">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="p_staff" Type="int" />
+    <Property Name="p_date" Type="datetime" />
+    <Property Name="p_material" Type="int" />
+    <Property Name="p_num" Type="int" />
+    <Property Name="P_state" Type="int" />
+    <Property Name="p_note" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="pur_quality">
+    <Key>
+      <PropertyRef Name="q_id" />
+    </Key>
+    <Property Name="q_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="q_provider" Type="int" />
+    <Property Name="q_material" Type="int" />
+    <Property Name="q_num" Type="int" />
+    <Property Name="q_staff" Type="int" />
+    <Property Name="q_information" Type="nvarchar" MaxLength="200" />
+    <Property Name="q_state" Type="int" />
+    <Property Name="q_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="pur_quotation">
+    <Key>
+      <PropertyRef Name="q_id" />
+    </Key>
+    <Property Name="q_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="q_name" Type="int" />
+    <Property Name="q_time" Type="datetime" />
+    <Property Name="q_material" Type="int" />
+    <Property Name="q_num" Type="int" />
+    <Property Name="q_auditor" Type="int" />
+    <Property Name="q_auditdate" Type="datetime" />
+    <Property Name="q_auditstate" Type="int" />
+    <Property Name="q_note" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="sale_indent">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="s_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="s_staff" Type="int" />
+    <Property Name="s_product" Type="int" />
+    <Property Name="s_num" Type="int" />
+    <Property Name="s_customer" Type="int" />
+    <Property Name="s_price" Type="float" />
+    <Property Name="s_date" Type="datetime" />
+    <Property Name="s_state" Type="int" />
+    <Property Name="s_logistics" Type="nvarchar" MaxLength="20" />
+    <Property Name="s_logisticsid" Type="varchar" MaxLength="50" />
+    <Property Name="s_address" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sale_quotation">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="s_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="s_product" Type="int" />
+    <Property Name="s_staff" Type="int" />
+    <Property Name="s_price" Type="float" />
+    <Property Name="s_num" Type="int" />
+    <Property Name="s_earning" Type="float" />
+  </EntityType>
+  <EntityType Name="section">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="s_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="s_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="s_owner" Type="nvarchar" MaxLength="20" />
+    <Property Name="s_tel" Type="varchar" MaxLength="20" />
+    <Property Name="s_note" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="staff">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="s_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="s_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="s_sex" Type="nvarchar" MaxLength="20" />
+    <Property Name="s_birth" Type="datetime" />
+    <Property Name="s_nation" Type="nvarchar" MaxLength="20" />
+    <Property Name="s_location" Type="nvarchar" MaxLength="200" />
+    <Property Name="s_address" Type="nvarchar" MaxLength="200" />
+    <Property Name="s_politics" Type="nvarchar" MaxLength="50" />
+    <Property Name="s_education" Type="nvarchar" MaxLength="50" />
+    <Property Name="s_section" Type="int" />
+    <Property Name="s_station" Type="int" />
+    <Property Name="s_tel" Type="varchar" MaxLength="20" />
+    <Property Name="s_note" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="station">
+    <Key>
+      <PropertyRef Name="s_id" />
+    </Key>
+    <Property Name="s_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="s_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="s_salary" Type="float" />
+    <Property Name="s_limit" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="warehouse">
+    <Key>
+      <PropertyRef Name="w_id" />
+    </Key>
+    <Property Name="w_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="w_location" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="w_capacity" Type="float" Nullable="false" />
+    <Property Name="w_type" Type="int" />
+    <Property Name="w_freecapacity" Type="float" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__instorage__i_mat__49C3F6B7">
+    <End Role="material" Type="Self.material" Multiplicity="0..1" />
+    <End Role="instorage" Type="Self.instorage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="material">
+        <PropertyRef Name="m_id" />
+      </Principal>
+      <Dependent Role="instorage">
+        <PropertyRef Name="i_material" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__instorage__i_sta__4D94879B">
+    <End Role="staff" Type="Self.staff" Multiplicity="0..1" />
+    <End Role="instorage" Type="Self.instorage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="s_id" />
+      </Principal>
+      <Dependent Role="instorage">
+        <PropertyRef Name="i_staff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__instorage__i_war__4E88ABD4">
+    <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
+    <End Role="instorage" Type="Self.instorage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="warehouse">
+        <PropertyRef Name="w_id" />
+      </Principal>
+      <Dependent Role="instorage">
+        <PropertyRef Name="i_warehouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__material__m_prov__1DE57479">
+    <End Role="provider" Type="Self.provider" Multiplicity="0..1" />
+    <End Role="material" Type="Self.material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="provider">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="material">
+        <PropertyRef Name="m_provider" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__material__m_ware__1CF15040">
+    <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
+    <End Role="material" Type="Self.material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="warehouse">
+        <PropertyRef Name="w_id" />
+      </Principal>
+      <Dependent Role="material">
+        <PropertyRef Name="m_warehouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__outstorag__o_mat__534D60F1">
+    <End Role="material" Type="Self.material" Multiplicity="0..1" />
+    <End Role="outstorage" Type="Self.outstorage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="material">
+        <PropertyRef Name="m_id" />
+      </Principal>
+      <Dependent Role="outstorage">
+        <PropertyRef Name="o_material" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__outstorag__o_sta__571DF1D5">
+    <End Role="staff" Type="Self.staff" Multiplicity="0..1" />
+    <End Role="outstorage" Type="Self.outstorage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="s_id" />
+      </Principal>
+      <Dependent Role="outstorage">
+        <PropertyRef Name="o_staff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__outstorag__o_war__5812160E">
+    <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
+    <End Role="outstorage" Type="Self.outstorage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="warehouse">
+        <PropertyRef Name="w_id" />
+      </Principal>
+      <Dependent Role="outstorage">
+        <PropertyRef Name="o_warehouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__product__p_wareh__628FA481">
+    <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
+    <End Role="product" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="warehouse">
+        <PropertyRef Name="w_id" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="p_warehouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pur_inden__p_mat__300424B4">
+    <End Role="material" Type="Self.material" Multiplicity="0..1" />
+    <End Role="pur_indent" Type="Self.pur_indent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="material">
+        <PropertyRef Name="m_id" />
+      </Principal>
+      <Dependent Role="pur_indent">
+        <PropertyRef Name="p_material" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pur_inden__p_sta__2D27B809">
+    <End Role="staff" Type="Self.staff" Multiplicity="0..1" />
+    <End Role="pur_indent" Type="Self.pur_indent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="s_id" />
+      </Principal>
+      <Dependent Role="pur_indent">
+        <PropertyRef Name="p_staff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pur_MRB__p_mater__398D8EEE">
+    <End Role="material" Type="Self.material" Multiplicity="0..1" />
+    <End Role="pur_MRB" Type="Self.pur_MRB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="material">
+        <PropertyRef Name="m_id" />
+      </Principal>
+      <Dependent Role="pur_MRB">
+        <PropertyRef Name="p_material" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pur_MRB__p_staff__37A5467C">
+    <End Role="staff" Type="Self.staff" Multiplicity="0..1" />
+    <End Role="pur_MRB" Type="Self.pur_MRB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="s_id" />
+      </Principal>
+      <Dependent Role="pur_MRB">
+        <PropertyRef Name="p_staff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pur_quali__q_mat__412EB0B6">
+    <End Role="material" Type="Self.material" Multiplicity="0..1" />
+    <End Role="pur_quality" Type="Self.pur_quality" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="material">
+        <PropertyRef Name="m_id" />
+      </Principal>
+      <Dependent Role="pur_quality">
+        <PropertyRef Name="q_material" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pur_quali__q_pro__403A8C7D">
+    <End Role="provider" Type="Self.provider" Multiplicity="0..1" />
+    <End Role="pur_quality" Type="Self.pur_quality" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="provider">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="pur_quality">
+        <PropertyRef Name="q_provider" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pur_quali__q_sta__4316F928">
+    <End Role="staff" Type="Self.staff" Multiplicity="0..1" />
+    <End Role="pur_quality" Type="Self.pur_quality" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="s_id" />
+      </Principal>
+      <Dependent Role="pur_quality">
+        <PropertyRef Name="q_staff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pur_quota__q_aud__267ABA7A">
+    <End Role="staff" Type="Self.staff" Multiplicity="0..1" />
+    <End Role="pur_quotation" Type="Self.pur_quotation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="s_id" />
+      </Principal>
+      <Dependent Role="pur_quotation">
+        <PropertyRef Name="q_auditor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pur_quota__q_mat__24927208">
+    <End Role="material" Type="Self.material" Multiplicity="0..1" />
+    <End Role="pur_quotation" Type="Self.pur_quotation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="material">
+        <PropertyRef Name="m_id" />
+      </Principal>
+      <Dependent Role="pur_quotation">
+        <PropertyRef Name="q_material" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pur_quota__q_nam__22AA2996">
+    <End Role="staff" Type="Self.staff" Multiplicity="0..1" />
+    <End Role="pur_quotation" Type="Self.pur_quotation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="s_id" />
+      </Principal>
+      <Dependent Role="pur_quotation">
+        <PropertyRef Name="q_name" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sale_inde__s_cus__72C60C4A">
+    <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+    <End Role="sale_indent" Type="Self.sale_indent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="sale_indent">
+        <PropertyRef Name="s_customer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sale_inde__s_pro__70DDC3D8">
+    <End Role="product" Type="Self.product" Multiplicity="0..1" />
+    <End Role="sale_indent" Type="Self.sale_indent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="sale_indent">
+        <PropertyRef Name="s_product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sale_inde__s_sta__6FE99F9F">
+    <End Role="staff" Type="Self.staff" Multiplicity="0..1" />
+    <End Role="sale_indent" Type="Self.sale_indent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="s_id" />
+      </Principal>
+      <Dependent Role="sale_indent">
+        <PropertyRef Name="s_staff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sale_quot__s_pro__6754599E">
+    <End Role="product" Type="Self.product" Multiplicity="0..1" />
+    <End Role="sale_quotation" Type="Self.sale_quotation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="sale_quotation">
+        <PropertyRef Name="s_product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__sale_quot__s_sta__68487DD7">
+    <End Role="staff" Type="Self.staff" Multiplicity="0..1" />
+    <End Role="sale_quotation" Type="Self.sale_quotation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff">
+        <PropertyRef Name="s_id" />
+      </Principal>
+      <Dependent Role="sale_quotation">
+        <PropertyRef Name="s_staff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__staff__s_section__0BC6C43E">
+    <End Role="section" Type="Self.section" Multiplicity="0..1" />
+    <End Role="staff" Type="Self.staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="section">
+        <PropertyRef Name="s_id" />
+      </Principal>
+      <Dependent Role="staff">
+        <PropertyRef Name="s_section" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__staff__s_station__0CBAE877">
+    <End Role="station" Type="Self.station" Multiplicity="0..1" />
+    <End Role="staff" Type="Self.staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="station">
+        <PropertyRef Name="s_id" />
+      </Principal>
+      <Dependent Role="staff">
+        <PropertyRef Name="s_station" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ERPMSModelStoreContainer">
+    <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="instorage" EntityType="Self.instorage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="material" EntityType="Self.material" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="outstorage" EntityType="Self.outstorage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="provider" EntityType="Self.provider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pur_indent" EntityType="Self.pur_indent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pur_MRB" EntityType="Self.pur_MRB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pur_quality" EntityType="Self.pur_quality" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pur_quotation" EntityType="Self.pur_quotation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sale_indent" EntityType="Self.sale_indent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sale_quotation" EntityType="Self.sale_quotation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="section" EntityType="Self.section" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="staff" EntityType="Self.staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="station" EntityType="Self.station" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="warehouse" EntityType="Self.warehouse" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__instorage__i_mat__49C3F6B7" Association="Self.FK__instorage__i_mat__49C3F6B7">
+      <End Role="material" EntitySet="material" />
+      <End Role="instorage" EntitySet="instorage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__instorage__i_sta__4D94879B" Association="Self.FK__instorage__i_sta__4D94879B">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="instorage" EntitySet="instorage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__instorage__i_war__4E88ABD4" Association="Self.FK__instorage__i_war__4E88ABD4">
+      <End Role="warehouse" EntitySet="warehouse" />
+      <End Role="instorage" EntitySet="instorage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__material__m_prov__1DE57479" Association="Self.FK__material__m_prov__1DE57479">
+      <End Role="provider" EntitySet="provider" />
+      <End Role="material" EntitySet="material" />
+    </AssociationSet>
+    <AssociationSet Name="FK__material__m_ware__1CF15040" Association="Self.FK__material__m_ware__1CF15040">
+      <End Role="warehouse" EntitySet="warehouse" />
+      <End Role="material" EntitySet="material" />
+    </AssociationSet>
+    <AssociationSet Name="FK__outstorag__o_mat__534D60F1" Association="Self.FK__outstorag__o_mat__534D60F1">
+      <End Role="material" EntitySet="material" />
+      <End Role="outstorage" EntitySet="outstorage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__outstorag__o_sta__571DF1D5" Association="Self.FK__outstorag__o_sta__571DF1D5">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="outstorage" EntitySet="outstorage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__outstorag__o_war__5812160E" Association="Self.FK__outstorag__o_war__5812160E">
+      <End Role="warehouse" EntitySet="warehouse" />
+      <End Role="outstorage" EntitySet="outstorage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__product__p_wareh__628FA481" Association="Self.FK__product__p_wareh__628FA481">
+      <End Role="warehouse" EntitySet="warehouse" />
+      <End Role="product" EntitySet="product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pur_inden__p_mat__300424B4" Association="Self.FK__pur_inden__p_mat__300424B4">
+      <End Role="material" EntitySet="material" />
+      <End Role="pur_indent" EntitySet="pur_indent" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pur_inden__p_sta__2D27B809" Association="Self.FK__pur_inden__p_sta__2D27B809">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="pur_indent" EntitySet="pur_indent" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pur_MRB__p_mater__398D8EEE" Association="Self.FK__pur_MRB__p_mater__398D8EEE">
+      <End Role="material" EntitySet="material" />
+      <End Role="pur_MRB" EntitySet="pur_MRB" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pur_MRB__p_staff__37A5467C" Association="Self.FK__pur_MRB__p_staff__37A5467C">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="pur_MRB" EntitySet="pur_MRB" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pur_quali__q_mat__412EB0B6" Association="Self.FK__pur_quali__q_mat__412EB0B6">
+      <End Role="material" EntitySet="material" />
+      <End Role="pur_quality" EntitySet="pur_quality" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pur_quali__q_pro__403A8C7D" Association="Self.FK__pur_quali__q_pro__403A8C7D">
+      <End Role="provider" EntitySet="provider" />
+      <End Role="pur_quality" EntitySet="pur_quality" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pur_quali__q_sta__4316F928" Association="Self.FK__pur_quali__q_sta__4316F928">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="pur_quality" EntitySet="pur_quality" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pur_quota__q_aud__267ABA7A" Association="Self.FK__pur_quota__q_aud__267ABA7A">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="pur_quotation" EntitySet="pur_quotation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pur_quota__q_mat__24927208" Association="Self.FK__pur_quota__q_mat__24927208">
+      <End Role="material" EntitySet="material" />
+      <End Role="pur_quotation" EntitySet="pur_quotation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pur_quota__q_nam__22AA2996" Association="Self.FK__pur_quota__q_nam__22AA2996">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="pur_quotation" EntitySet="pur_quotation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sale_inde__s_cus__72C60C4A" Association="Self.FK__sale_inde__s_cus__72C60C4A">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="sale_indent" EntitySet="sale_indent" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sale_inde__s_pro__70DDC3D8" Association="Self.FK__sale_inde__s_pro__70DDC3D8">
+      <End Role="product" EntitySet="product" />
+      <End Role="sale_indent" EntitySet="sale_indent" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sale_inde__s_sta__6FE99F9F" Association="Self.FK__sale_inde__s_sta__6FE99F9F">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="sale_indent" EntitySet="sale_indent" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sale_quot__s_pro__6754599E" Association="Self.FK__sale_quot__s_pro__6754599E">
+      <End Role="product" EntitySet="product" />
+      <End Role="sale_quotation" EntitySet="sale_quotation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__sale_quot__s_sta__68487DD7" Association="Self.FK__sale_quot__s_sta__68487DD7">
+      <End Role="staff" EntitySet="staff" />
+      <End Role="sale_quotation" EntitySet="sale_quotation" />
+    </AssociationSet>
+    <AssociationSet Name="FK__staff__s_section__0BC6C43E" Association="Self.FK__staff__s_section__0BC6C43E">
+      <End Role="section" EntitySet="section" />
+      <End Role="staff" EntitySet="staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK__staff__s_station__0CBAE877" Association="Self.FK__staff__s_station__0CBAE877">
+      <End Role="station" EntitySet="station" />
+      <End Role="staff" EntitySet="staff" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

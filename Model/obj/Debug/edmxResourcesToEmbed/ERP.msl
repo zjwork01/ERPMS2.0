@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ERPMSModelStoreContainer" CdmEntityContainer="ERPContext">
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="ERPMSModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+          <ScalarProperty Name="c_company" ColumnName="c_company" />
+          <ScalarProperty Name="c_tel" ColumnName="c_tel" />
+          <ScalarProperty Name="c_type" ColumnName="c_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instorages">
+      <EntityTypeMapping TypeName="ERPMSModel.instorage">
+        <MappingFragment StoreEntitySet="instorage">
+          <ScalarProperty Name="i_id" ColumnName="i_id" />
+          <ScalarProperty Name="i_material" ColumnName="i_material" />
+          <ScalarProperty Name="i_num" ColumnName="i_num" />
+          <ScalarProperty Name="i_volume" ColumnName="i_volume" />
+          <ScalarProperty Name="i_weight" ColumnName="i_weight" />
+          <ScalarProperty Name="i_staff" ColumnName="i_staff" />
+          <ScalarProperty Name="i_warehouse" ColumnName="i_warehouse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="materials">
+      <EntityTypeMapping TypeName="ERPMSModel.material">
+        <MappingFragment StoreEntitySet="material">
+          <ScalarProperty Name="m_id" ColumnName="m_id" />
+          <ScalarProperty Name="m_name" ColumnName="m_name" />
+          <ScalarProperty Name="m_unit" ColumnName="m_unit" />
+          <ScalarProperty Name="m_price" ColumnName="m_price" />
+          <ScalarProperty Name="m_num" ColumnName="m_num" />
+          <ScalarProperty Name="m_warehouse" ColumnName="m_warehouse" />
+          <ScalarProperty Name="m_provider" ColumnName="m_provider" />
+          <ScalarProperty Name="m_note" ColumnName="m_note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="outstorages">
+      <EntityTypeMapping TypeName="ERPMSModel.outstorage">
+        <MappingFragment StoreEntitySet="outstorage">
+          <ScalarProperty Name="o_id" ColumnName="o_id" />
+          <ScalarProperty Name="o_material" ColumnName="o_material" />
+          <ScalarProperty Name="o_num" ColumnName="o_num" />
+          <ScalarProperty Name="o_volume" ColumnName="o_volume" />
+          <ScalarProperty Name="o_weight" ColumnName="o_weight" />
+          <ScalarProperty Name="o_staff" ColumnName="o_staff" />
+          <ScalarProperty Name="o_warehouse" ColumnName="o_warehouse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="ERPMSModel.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="p_unit" ColumnName="p_unit" />
+          <ScalarProperty Name="p_num" ColumnName="p_num" />
+          <ScalarProperty Name="p_warehouse" ColumnName="p_warehouse" />
+          <ScalarProperty Name="p_note" ColumnName="p_note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="providers">
+      <EntityTypeMapping TypeName="ERPMSModel.provider">
+        <MappingFragment StoreEntitySet="provider">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="p_company" ColumnName="p_company" />
+          <ScalarProperty Name="p_manager" ColumnName="p_manager" />
+          <ScalarProperty Name="p_tel" ColumnName="p_tel" />
+          <ScalarProperty Name="p_cardname" ColumnName="p_cardname" />
+          <ScalarProperty Name="p_card" ColumnName="p_card" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pur_indent">
+      <EntityTypeMapping TypeName="ERPMSModel.pur_indent">
+        <MappingFragment StoreEntitySet="pur_indent">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="p_staff" ColumnName="p_staff" />
+          <ScalarProperty Name="p_indentdate" ColumnName="p_indentdate" />
+          <ScalarProperty Name="p_pickdate" ColumnName="p_pickdate" />
+          <ScalarProperty Name="p_material" ColumnName="p_material" />
+          <ScalarProperty Name="p_num" ColumnName="p_num" />
+          <ScalarProperty Name="p_indentstate" ColumnName="p_indentstate" />
+          <ScalarProperty Name="p_logistics" ColumnName="p_logistics" />
+          <ScalarProperty Name="p_logisticeid" ColumnName="p_logisticeid" />
+          <ScalarProperty Name="p_note" ColumnName="p_note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pur_MRB">
+      <EntityTypeMapping TypeName="ERPMSModel.pur_MRB">
+        <MappingFragment StoreEntitySet="pur_MRB">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="p_staff" ColumnName="p_staff" />
+          <ScalarProperty Name="p_date" ColumnName="p_date" />
+          <ScalarProperty Name="p_material" ColumnName="p_material" />
+          <ScalarProperty Name="p_num" ColumnName="p_num" />
+          <ScalarProperty Name="P_state" ColumnName="P_state" />
+          <ScalarProperty Name="p_note" ColumnName="p_note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pur_quality">
+      <EntityTypeMapping TypeName="ERPMSModel.pur_quality">
+        <MappingFragment StoreEntitySet="pur_quality">
+          <ScalarProperty Name="q_id" ColumnName="q_id" />
+          <ScalarProperty Name="q_provider" ColumnName="q_provider" />
+          <ScalarProperty Name="q_material" ColumnName="q_material" />
+          <ScalarProperty Name="q_num" ColumnName="q_num" />
+          <ScalarProperty Name="q_staff" ColumnName="q_staff" />
+          <ScalarProperty Name="q_information" ColumnName="q_information" />
+          <ScalarProperty Name="q_state" ColumnName="q_state" />
+          <ScalarProperty Name="q_date" ColumnName="q_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pur_quotation">
+      <EntityTypeMapping TypeName="ERPMSModel.pur_quotation">
+        <MappingFragment StoreEntitySet="pur_quotation">
+          <ScalarProperty Name="q_id" ColumnName="q_id" />
+          <ScalarProperty Name="q_name" ColumnName="q_name" />
+          <ScalarProperty Name="q_time" ColumnName="q_time" />
+          <ScalarProperty Name="q_material" ColumnName="q_material" />
+          <ScalarProperty Name="q_num" ColumnName="q_num" />
+          <ScalarProperty Name="q_auditor" ColumnName="q_auditor" />
+          <ScalarProperty Name="q_auditdate" ColumnName="q_auditdate" />
+          <ScalarProperty Name="q_auditstate" ColumnName="q_auditstate" />
+          <ScalarProperty Name="q_note" ColumnName="q_note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sale_indent">
+      <EntityTypeMapping TypeName="ERPMSModel.sale_indent">
+        <MappingFragment StoreEntitySet="sale_indent">
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="s_staff" ColumnName="s_staff" />
+          <ScalarProperty Name="s_product" ColumnName="s_product" />
+          <ScalarProperty Name="s_num" ColumnName="s_num" />
+          <ScalarProperty Name="s_customer" ColumnName="s_customer" />
+          <ScalarProperty Name="s_price" ColumnName="s_price" />
+          <ScalarProperty Name="s_date" ColumnName="s_date" />
+          <ScalarProperty Name="s_state" ColumnName="s_state" />
+          <ScalarProperty Name="s_logistics" ColumnName="s_logistics" />
+          <ScalarProperty Name="s_logisticsid" ColumnName="s_logisticsid" />
+          <ScalarProperty Name="s_address" ColumnName="s_address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sale_quotation">
+      <EntityTypeMapping TypeName="ERPMSModel.sale_quotation">
+        <MappingFragment StoreEntitySet="sale_quotation">
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="s_product" ColumnName="s_product" />
+          <ScalarProperty Name="s_staff" ColumnName="s_staff" />
+          <ScalarProperty Name="s_price" ColumnName="s_price" />
+          <ScalarProperty Name="s_num" ColumnName="s_num" />
+          <ScalarProperty Name="s_earning" ColumnName="s_earning" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sections">
+      <EntityTypeMapping TypeName="ERPMSModel.section">
+        <MappingFragment StoreEntitySet="section">
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="s_name" ColumnName="s_name" />
+          <ScalarProperty Name="s_owner" ColumnName="s_owner" />
+          <ScalarProperty Name="s_tel" ColumnName="s_tel" />
+          <ScalarProperty Name="s_note" ColumnName="s_note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staffs">
+      <EntityTypeMapping TypeName="ERPMSModel.staff">
+        <MappingFragment StoreEntitySet="staff">
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="s_name" ColumnName="s_name" />
+          <ScalarProperty Name="s_sex" ColumnName="s_sex" />
+          <ScalarProperty Name="s_birth" ColumnName="s_birth" />
+          <ScalarProperty Name="s_nation" ColumnName="s_nation" />
+          <ScalarProperty Name="s_location" ColumnName="s_location" />
+          <ScalarProperty Name="s_address" ColumnName="s_address" />
+          <ScalarProperty Name="s_politics" ColumnName="s_politics" />
+          <ScalarProperty Name="s_education" ColumnName="s_education" />
+          <ScalarProperty Name="s_section" ColumnName="s_section" />
+          <ScalarProperty Name="s_station" ColumnName="s_station" />
+          <ScalarProperty Name="s_tel" ColumnName="s_tel" />
+          <ScalarProperty Name="s_note" ColumnName="s_note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stations">
+      <EntityTypeMapping TypeName="ERPMSModel.station">
+        <MappingFragment StoreEntitySet="station">
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="s_name" ColumnName="s_name" />
+          <ScalarProperty Name="s_salary" ColumnName="s_salary" />
+          <ScalarProperty Name="s_limit" ColumnName="s_limit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="warehouses">
+      <EntityTypeMapping TypeName="ERPMSModel.warehouse">
+        <MappingFragment StoreEntitySet="warehouse">
+          <ScalarProperty Name="w_id" ColumnName="w_id" />
+          <ScalarProperty Name="w_location" ColumnName="w_location" />
+          <ScalarProperty Name="w_capacity" ColumnName="w_capacity" />
+          <ScalarProperty Name="w_type" ColumnName="w_type" />
+          <ScalarProperty Name="w_freecapacity" ColumnName="w_freecapacity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

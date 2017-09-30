@@ -1,0 +1,9 @@
+E:\毕设\Code\ERPMS\Tool\bin\Debug\Tool.dll
+E:\毕设\Code\ERPMS\Tool\bin\Debug\Tool.pdb
+E:\毕设\Code\ERPMS\Tool\obj\Debug\Tool.csprojResolveAssemblyReference.cache
+E:\毕设\Code\ERPMS\Tool\obj\Debug\Tool.dll
+E:\毕设\Code\ERPMS\Tool\obj\Debug\Tool.pdb
+E:\毕设\Code\ERPMS2.0\Tool\bin\Debug\Tool.dll
+E:\毕设\Code\ERPMS2.0\Tool\bin\Debug\Tool.pdb
+E:\毕设\Code\ERPMS2.0\Tool\obj\Debug\Tool.dll
+E:\毕设\Code\ERPMS2.0\Tool\obj\Debug\Tool.pdb

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4e75ecee88b0499da9bd519742915a29" Name="Diagram1">
+        <EntityTypeShape EntityType="ERPMSModel.customer" Width="1.5" PointX="9" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPMSModel.instorage" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPMSModel.material" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPMSModel.outstorage" Width="1.5" PointX="8.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPMSModel.product" Width="1.5" PointX="9" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPMSModel.provider" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPMSModel.pur_indent" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPMSModel.pur_MRB" Width="1.5" PointX="5.25" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPMSModel.pur_quality" Width="1.5" PointX="8.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPMSModel.pur_quotation" Width="1.5" PointX="8.25" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPMSModel.sale_indent" Width="1.5" PointX="11.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPMSModel.sale_quotation" Width="1.5" PointX="11.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPMSModel.section" Width="1.5" PointX="0.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPMSModel.staff" Width="1.5" PointX="3" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPMSModel.station" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERPMSModel.warehouse" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="ERPMSModel.FK__sale_inde__s_cus__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__instorage__i_mat__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__instorage__i_sta__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__instorage__i_war__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__material__m_prov__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__material__m_ware__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__outstorag__o_mat__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__pur_inden__p_mat__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__pur_MRB__p_mater__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__pur_quali__q_mat__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__pur_quota__q_mat__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__outstorag__o_sta__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__outstorag__o_war__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__product__p_wareh__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__sale_inde__s_pro__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__sale_quot__s_pro__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__pur_quali__q_pro__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__pur_inden__p_sta__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__pur_MRB__p_staff__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__pur_quali__q_sta__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__pur_quota__q_aud__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__pur_quota__q_nam__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__sale_inde__s_sta__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__sale_quot__s_sta__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__staff__s_section__0BC6C43E" ManuallyRouted="false" />
+        <AssociationConnector Association="ERPMSModel.FK__staff__s_station__0CBAE877" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
