@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Script/css/bootstrap.min.css" />
+    <style type="text/css">
+        .menu_title{
+            list-style:none;
+            background-color:rgb(22,143,203);
+            color:white;
+            font-size:18px;
+            text-align:center;
+            display:block;
+            height:30px;
+            border-radius:5px;
+            margin-top:5px;
+            margin-left:0px;
+            line-height:30px;
+            cursor:default;
+        }
+        .menu2_title{
+            list-style:none;
+            color:rgb(22,143,203);
+            font-size:14px;
+            text-align:center;
+            display:block;
+            border-radius:5px;
+            margin-top:5px;
+            margin-left:0px;
+            height:25px;
+            line-height:25px;
+            cursor:pointer;
+        }
+        .active{
+            list-style:none;
+            background-color:rgb(141,209,240);
+            color:red;
+            font-size:14px;
+            text-align:center;
+            display:block;
+            border-radius:5px;
+            margin-top:5px;
+            margin-left:0px;
+            height:30px;
+            line-height:30px;
+            cursor:pointer;
+        }
+        .menu2 ul{
+            margin-left:0px;
+        }
+        .menu2{
+            display:none;
+        }
+        .fouces{
+            display:block;
+        }
+        .clear{
+            clear:both;
+        }
+        .top_container{
+            width:100%;
+            height:80px;
+            background-color:rgb(22,143,203);
+        }
+        .left_container{
+            width:240px;
+            height:800px;
+            float:left;
+        }
+        .center_container{
+            float:left;
+        }
+        .bottom_container{
+            width:100%;
+            height:150px;
+            background-color:rgb(22,143,203)
+        }
+        .main{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="top_container">
+            <img src="~/Script/img/logo.png" />
+        </div>
+        <div class="left_container">
+            <div class="menu">
+                <span class="menu_title">系统设置</span>
+                <div class="menu2 fouces">
+                    <ul>
+                        <li class="menu2_title">部门设置</li>
+                        <li class="menu2_title">岗位设置</li>
+                        <li class="menu2_title">人员管理</li>
+                        <li class="menu2_title">权限管理</li>
+                        <li class="menu2_title">日志管理</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu">
+                <span class="menu_title">销售管理</span>
+                <div class="menu2">
+                    <ul>
+                        <li class="menu2_title">录入客户信息</li>
+                        <li class="menu2_title">录入客户订单</li>
+                        <li class="menu2_title">录入报价单</li>
+                        <li class="menu2_title">销售报表</li>
+                        <li class="menu2_title">库存状况</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu">
+                <span class="menu_title">采购管理</span>
+                <div class="menu2">
+                    <ul>
+                        <li class="menu2_title">录入供应商信息</li>
+                        <li class="menu2_title">录入原材料信息</li>
+                        <li class="menu2_title">供应商管理</li>
+                        <li class="menu2_title">原材料管理</li>
+                        <li class="menu2_title">新增采购单</li>
+                        <li class="menu2_title">库存状况</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu">
+                <span class="menu_title">仓储管理</span>
+                <div class="menu2">
+                    <ul>
+                        <li class="menu2_title">录入入库单</li>
+                        <li class="menu2_title">库存明细表</li>
+                        <li class="menu2_title">录入出库单</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu">
+                <span class="menu_title">工程管理</span>
+                <div class="menu2">
+                    <ul>
+                        <li class="menu2_title">录入BOM单</li>
+                        <li class="menu2_title">录入BOM明细表</li>
+                        <li class="menu2_title">BOM单校队审核</li>
+                        <li class="menu2_title">从BOM生成请购单</li>
+                        <li class="menu2_title">库存状况</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu">
+                <span class="menu_title">生产管理</span>
+                <div class="menu2">
+                    <ul>
+                        <li class="menu2_title">生产计划排程</li>
+                        <li class="menu2_title">生产进度</li>
+                        <li class="menu2_title">生产进度明细</li>
+                        <li class="menu2_title">库存状况</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu">
+                <span class="menu_title">财务管理</span>
+                <div class="menu2">
+                    <ul>
+                        <li class="menu2_title">财务总资金</li>
+                        <li class="menu2_title">流水单</li>
+                        <li class="menu2_title">财务报表</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu">
+                <span class="menu_title">帮助</span>
+                <div class="menu2">
+                    <ul>
+                        <li class="menu2_title">使用说明</li>
+                        <li class="menu2_title">联系我们</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="center_container">
+            @RenderBody()
+        </div>
+        <div class="clear"></div>
+        <div class="bottom_container">
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script src="~/Script/js/jquery-1.8.3.min.js"></script>
+<script src="~/Script/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        
+        $('.menu2_title').click(function () {
+            $('.menu2 ul li').each(function () {
+                if (this.classList.contains("active")) {
+                    this.classList.remove("active");
+                }
+            });
+            this.classList.add("active");
+        });
+        $('.menu').click(function () {
+            $('.menu2').each(function () {
+                if (this.classList.contains("fouces")) {
+                    this.classList.remove("fouces");
+                }
+            });
+            $(this).find('.menu2').addClass("fouces");
+        })
+    })
+</script>

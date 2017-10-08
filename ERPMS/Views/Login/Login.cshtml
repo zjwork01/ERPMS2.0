@@ -1,0 +1,91 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ERP管理系统登录</title>
+
+    
+</head>
+<body>
+    <div>
+        用户名：<input  type="text" name="uname" id="uname" />
+        密码：<input type="password" name="pwd" id="pwd" />
+        验证码：<img src="~/Validate/ValidateImg.ashx" id="validateImg" /><input type="text" name="validateCode" id="validateCode" /><span style="color:red;display:none;" id="prompt">验证码出错</span>
+        <input type="button" id="login" value="登录" />
+        <input type="button" id="reset" value="取消" />
+    </div>
+
+</body>
+</html>
+
+<!--===================================JavaScript=================================-->
+<script src="~/Script/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        $('#validateImg').click(function () {
+            this.src = "~/Views/ValidateImg.ashx";
+        })
+
+        //登录
+        $('#login').click(function () {
+            var data = getData();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("Login", "Login")',
+                data: data,
+                dataType: "JSON",
+                success: function (msg) {
+                    if (msg.result == "success") {
+                        $('#prompt').css("display", "none");
+                        window.location.href = '@Url.Action("Index", "Home")';
+                    } else if (msg.result == 'error') {
+                        $('#prompt').css("display", "none");
+                        alert("用户名和密码错误，请重新输入... ...");
+                        window.location.reload();
+                    } else if (msg.result == "fail") {
+                        $('#prompt').css("display", "block");
+                    }
+                }
+            })
+        });
+
+        //判断验证码是否正确
+        $('#validateCode').blur(function () {
+            var validateCode = $('#validateCode').val();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("Validate", "Login")',
+                data: { "validateCode": validateCode },
+                dataType: "JSON",
+                success: function (msg) {
+                    if (msg.result == "fail") {
+                        $('#prompt').css("display", "block");
+                    } else {
+                        $('#prompt').css("display", "none");
+                    }
+                }
+            })
+        });
+
+        //重置
+        $('#reset').click(function () {
+            window.location.reload();
+        });
+
+        //获取页面上的数据，并封装为JSON
+        function getData() {
+            var uname = $('#uname').val();
+            var upwd = $('#upwd').val();
+            var validateCode = $('#validateCode').val();
+            var data = { "uname": uname, "upwd": upwd, "validateCode": validateCode };
+            return data;
+        }
+    })
+</script>
+

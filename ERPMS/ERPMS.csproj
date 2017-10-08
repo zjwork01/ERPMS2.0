@@ -153,6 +153,12 @@
     <Content Include="Script\js\jquery.zclip.js" />
     <Content Include="Script\js\bootstrap.js" />
     <Content Include="Script\js\bootstrap.min.js" />
+    <Content Include="Views\Login\Login.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Master.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -165,18 +171,13 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Login\Login.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Validate\ValidateImg.ashx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Master.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
