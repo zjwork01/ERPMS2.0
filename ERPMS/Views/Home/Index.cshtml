@@ -1,30 +1,6 @@
 ﻿@{
-    Layout = null;
+    ViewBag.Title = "天启ERP管理系统-首页";
+    Layout = "~/Views/Master.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-</head>
-<body>
-<div>
-    <form action="@Url.Action("Add", "Home")" method="POST">
-        部门名称：<input type="text" name="name"/>
-        负责人：<input type="text" name="sex"/>
-        联系电话：<input type="text" name="tel" />
-        备注：<input type="text" name="note" />
-        <input type="submit" value="提交" />
-        <input type="reset" value="清空" /><br />
-        @{
-            if (ViewBag.result != null || !string.IsNullOrEmpty(ViewBag.result))
-            {
-                <span style="color:red">@ViewBag.result</span>
-            }
-        }
-    </form>
-</div>
-</body>
-</html>
+<h2>首页</h2>

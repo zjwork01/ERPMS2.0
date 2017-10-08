@@ -21,3 +21,14 @@ E:\毕设\Code\ERPMS2.0\BLL\obj\Debug\BLL.dll
 E:\毕设\Code\ERPMS2.0\BLL\obj\Debug\BLL.pdb
 E:\毕设\Code\ERPMS2.0\BLL\bin\Debug\EntityFramework.xml
 E:\毕设\Code\ERPMS2.0\BLL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\毕设\ERPMS\ERPMSEF\BLL\bin\Debug\BLL.dll
+D:\毕设\ERPMS\ERPMSEF\BLL\bin\Debug\BLL.pdb
+D:\毕设\ERPMS\ERPMSEF\BLL\bin\Debug\DAL.dll
+D:\毕设\ERPMS\ERPMSEF\BLL\bin\Debug\Model.dll
+D:\毕设\ERPMS\ERPMSEF\BLL\bin\Debug\Tool.dll
+D:\毕设\ERPMS\ERPMSEF\BLL\bin\Debug\EntityFramework.dll
+D:\毕设\ERPMS\ERPMSEF\BLL\bin\Debug\DAL.pdb
+D:\毕设\ERPMS\ERPMSEF\BLL\bin\Debug\Model.pdb
+D:\毕设\ERPMS\ERPMSEF\BLL\bin\Debug\Tool.pdb
+D:\毕设\ERPMS\ERPMSEF\BLL\obj\Debug\BLL.dll
+D:\毕设\ERPMS\ERPMSEF\BLL\obj\Debug\BLL.pdb

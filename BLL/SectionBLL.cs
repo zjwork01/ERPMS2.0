@@ -16,9 +16,11 @@ namespace BLL
 {
     public class SectionBLL
     {
+
+        SectionDAL sd = new SectionDAL();
+
         public string AddSection(section s)
-        {
-            SectionDAL sd = new SectionDAL();
+        {    
             if (sd.Add(s))
             {
                 return "数据添加成功";
@@ -28,5 +30,31 @@ namespace BLL
                 return "数据添加失败";
             }
         }
+
+        public string DeleteSection(int id)
+        {
+            if (sd.Delete(id))
+            {
+                return "数据删除成功";
+            }
+            else
+            {
+                return "数据删除失败";
+            }
+        }
+
+        public string AlterSection(section s,params string[] para)
+        {
+            if (sd.Alter(s, para))
+            {
+                return "修改信息成功";
+            }
+            else
+            {
+                return "修改信息失败";
+            }
+        }
+
+
     }
 }
